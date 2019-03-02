@@ -28,14 +28,14 @@
                                 <div class="body">
 
                                     <p><?= character_limiter(strip_tags($product->description), 25); ?></p>
-                                    <a href="#" class="btn btn-default btn-sm btn-hvr hvr-sweep-to-right margin-clear">Görüntüle<i class="fa fa-arrow-right pl-10"></i></a>
+                                    <a href="<?= base_url("urun-detay/{$product->url}"); ?>" class="btn btn-default btn-sm btn-hvr hvr-sweep-to-right margin-clear">Görüntüle<i class="fa fa-arrow-right pl-10"></i></a>
                                 </div>
                             </div>
                         </div>
                     <?php endforeach; ?>
                 </div>
             </div>
-        </div>
+    </div>
 
     </div>
 </section>

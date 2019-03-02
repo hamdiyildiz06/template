@@ -149,7 +149,7 @@
                                             </li>
 
                                             <li>
-                                                <a href="portfolio-grid-2-3-col.html">Ürünler</a>
+                                                <a href="<?= base_url("urun-listesi"); ?>">Ürünler</a>
                                             </li>
                                             <li>
                                                 <a href="portfolio-grid-2-3-col.html">Eğitimler</a>
