@@ -40,9 +40,10 @@ class Home extends CI_Controller {
 
         //Verileri Yükleyelim
         $this->load->model("product_model");
+        $this->load->model("product_image_model");
         $this->load->helper("text");
 
-        //Verileri Çekelim
+        //Verileri Çekelim ->product detail
         $viewData->product = $this->product_model->get(
             array(
                 "isActive" => 1,
@@ -50,8 +51,15 @@ class Home extends CI_Controller {
             ),"rank ASC"
         );
 
-        //Verileri Çekelim
-        $viewData->products = $this->product_model->get_all(
+        $viewData->product_image = $this->product_image_model->get_all(
+            array(
+                "isActive"   => 1,
+                "product_id" => $viewData->product->id
+            ),"rank ASC"
+        );
+
+        //Verileri Çekelim -> Diğer ürünler
+        $viewData->other_products = $this->product_model->get_all(
             array(
                 "isActive" => 1,
                 "id !=" => $viewData->product->id
