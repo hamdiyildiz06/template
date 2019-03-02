@@ -69,7 +69,23 @@ class Home extends CI_Controller {
         $this->load->view($viewData->viewFolder, $viewData);
     }
 
+    public function portfolio_list(){
+        $viewData = new stdClass();
+        $viewData->viewFolder = "portfolio_list_v";
 
+        //Verileri Yükleyelim
+        $this->load->model("product_model");
+        $this->load->helper("text");
+
+        //Verileri Çekelim
+        $viewData->products = $this->product_model->get_all(
+            array(
+                "isActive" => 1,
+            ),"rank ASC"
+        );
+
+        $this->load->view($viewData->viewFolder, $viewData);
+    }
 
 
 
