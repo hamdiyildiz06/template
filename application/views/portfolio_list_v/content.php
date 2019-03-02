@@ -21,7 +21,13 @@
                         <div class="row">
                             <div class="col-sm-6 col-md-4 col-lg-3">
                                 <div class="overlay-container">
-                                    <img src="<?= base_url("assets/images"); ?>/portfolio-1.jpg" alt="">
+                                    <?php
+                                    $image = get_portfolio_cover_image($portfolio->id);
+                                    $image = ($image) ? base_url("panel/uploads/portfolio_v/{$image}") : base_url("assets/images/portfolio-1.jpg");
+                                    ?>
+
+                                    <img src="<?= $image; ?>" alt="<?= $portfolio->title; ?>">
+
                                     <div class="overlay-to-top">
                                         <p class="small margin-clear"><em> <?= $portfolio->title; ?> </em></p>
                                     </div>
@@ -29,7 +35,7 @@
                             </div>
                             <div class="col-sm-6 col-md-8 col-lg-9">
                                 <div class="body">
-                                    <h3 class="title"><a href="portfolio-item.html"><?= $portfolio->title; ?></a></h3>
+                                    <h3 class="title"><a href="<?= base_url("portfolyo-detay/{$portfolio->url}") ?>"><?= $portfolio->title; ?></a></h3>
                                     <p class="small mb-10"><i class="icon-calendar"></i> <?= get_readable_date($portfolio->finishedAt); ?>
                                     <?php $portfolio_category = get_portfolio_category_title($portfolio->category_id); ?>
                                     <?php if ($portfolio_category){ ?>

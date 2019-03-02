@@ -8,6 +8,7 @@ class Home extends CI_Controller {
     {
         parent::__construct();
         $this->viewFolder = "homepage";
+        $this->load->helper("text");
 
     }
 
@@ -22,7 +23,6 @@ class Home extends CI_Controller {
 
         //Verileri Yükleyelim
         $this->load->model("product_model");
-        $this->load->helper("text");
 
         //Verileri Çekelim
         $viewData->products = $this->product_model->get_all(
@@ -41,7 +41,6 @@ class Home extends CI_Controller {
         //Verileri Yükleyelim
         $this->load->model("product_model");
         $this->load->model("product_image_model");
-        $this->load->helper("text");
 
         //Verileri Çekelim ->product detail
         $viewData->product = $this->product_model->get(
@@ -75,7 +74,6 @@ class Home extends CI_Controller {
 
         //Verileri Yükleyelim
         $this->load->model("portfolio_model");
-        $this->load->helper("text");
 
         //Verileri Çekelim
         $viewData->portfolios = $this->portfolio_model->get_all(

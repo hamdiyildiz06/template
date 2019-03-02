@@ -20,7 +20,7 @@
                                         $image = ($image) ? base_url("panel/uploads/product_v/{$image}") : base_url("assets/images/portfolio-1.jpg");
                                     ?>
 
-                                    <img src="<?= $image; ?>" alt="<?= $product->url; ?>">
+                                    <img src="<?= $image; ?>" alt="<?= $product->title; ?>">
                                     <div class="overlay-bottom text-left">
                                         <p class="lead margin-clear"><?= character_limiter(strip_tags($product->title),25); ?></p>
                                     </div>
