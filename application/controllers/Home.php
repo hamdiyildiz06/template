@@ -119,7 +119,24 @@ class Home extends CI_Controller {
         $this->load->view($viewData->viewFolder, $viewData);
     }
 
+    public function course_list(){
+        $viewData = new stdClass();
+        $viewData->viewFolder = "course_list_v";
 
+        //Verileri Yükleyelim
+        $this->load->model("course_model");
+
+        //Verileri Çekelim
+        $viewData->courses = $this->course_model->get_all(
+            array(
+                "isActive" => 1,
+            ),"rank ASC, event_date ASC"
+        );
+
+
+
+        $this->load->view($viewData->viewFolder, $viewData);
+    }
 
 
 
