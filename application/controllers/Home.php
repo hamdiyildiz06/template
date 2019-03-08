@@ -70,13 +70,13 @@ class Home extends CI_Controller {
 
     public function portfolio_list(){
         $viewData = new stdClass();
-        $viewData->viewFolder = "portfolio_list_v";
+        $viewData->viewFolder = "course_list_v";
 
         //Verileri Yükleyelim
-        $this->load->model("portfolio_model");
+        $this->load->model("course_model");
 
         //Verileri Çekelim
-        $viewData->portfolios = $this->portfolio_model->get_all(
+        $viewData->courses = $this->course_model->get_all(
             array(
                 "isActive" => 1,
             ),"rank ASC"
@@ -133,11 +133,34 @@ class Home extends CI_Controller {
             ),"rank ASC, event_date ASC"
         );
 
-
-
         $this->load->view($viewData->viewFolder, $viewData);
     }
 
+    public function course_detail($url = ""){
+        $viewData = new stdClass();
+        $viewData->viewFolder = "course_v";
+
+        //Verileri Yükleyelim
+        $this->load->model("course_model");
+
+        //Verileri Çekelim ->course detail
+        $viewData->course = $this->course_model->get(
+            array(
+                "isActive" => 1,
+                "url"      => $url
+            ),"rank ASC"
+        );
+
+        //Verileri Çekelim -> Diğer ürünler
+        $viewData->other_courses = $this->course_model->get_all(
+            array(
+                "isActive" => 1,
+                "id !=" => $viewData->course->id
+            ),"rand()",array("start" => 0, "count" => 3)
+        );
+
+        $this->load->view($viewData->viewFolder, $viewData);
+    }
 
 
 
