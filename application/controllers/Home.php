@@ -162,7 +162,22 @@ class Home extends CI_Controller {
         $this->load->view($viewData->viewFolder, $viewData);
     }
 
+    public function reference_list(){
+        $viewData = new stdClass();
+        $viewData->viewFolder = "reference_list_v";
 
+        //Verileri Yükleyelim
+        $this->load->model("reference_model");
+
+        //Verileri Çekelim
+        $viewData->references = $this->reference_model->get_all(
+            array(
+                "isActive" => 1,
+            ),"rank ASC"
+        );
+
+        $this->load->view($viewData->viewFolder, $viewData);
+    }
 
 
 

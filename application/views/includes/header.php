@@ -135,7 +135,7 @@
                                                     <li ><a href="portfolio-list-1.html">Hakkımızda</a></li>
                                                     <li ><a href="<?= base_url("portfolyo-listesi") ?>">Portfolyo</a></li>
                                                     <li ><a href="portfolio-list-sidebar.html">Haberler</a></li>
-                                                    <li ><a href="portfolio-list-sidebar.html">Referanslar</a></li>
+                                                    <li ><a href="<?= base_url("referanslar") ?>">Referanslar</a></li>
                                                 </ul>
                                             </li>
 
