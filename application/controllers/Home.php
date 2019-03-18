@@ -182,6 +182,104 @@ class Home extends CI_Controller {
 
 
 
+    public function brand_list(){
+        $viewData = new stdClass();
+        $viewData->viewFolder = "brand_list_v";
+
+        //Verileri Yükleyelim
+        $this->load->model("brand_model");
+
+        //Verileri Çekelim
+        $viewData->brands = $this->brand_model->get_all(
+            array(
+                "isActive" => 1,
+            ),"rank ASC"
+        );
+
+        $this->load->view($viewData->viewFolder, $viewData);
+    }
+
+    public function brand_detail($url = ""){
+        $viewData = new stdClass();
+        $viewData->viewFolder = "course_v";
+
+        //Verileri Yükleyelim
+        $this->load->model("course_model");
+
+        //Verileri Çekelim ->course detail
+        $viewData->course = $this->course_model->get(
+            array(
+                "isActive" => 1,
+                "url"      => $url
+            ),"rank ASC"
+        );
+
+        //Verileri Çekelim -> Diğer ürünler
+        $viewData->other_courses = $this->course_model->get_all(
+            array(
+                "isActive" => 1,
+                "id !=" => $viewData->course->id
+            ),"rand()",array("start" => 0, "count" => 3)
+        );
+
+        $this->load->view($viewData->viewFolder, $viewData);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

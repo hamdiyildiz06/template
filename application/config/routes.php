@@ -64,3 +64,5 @@ $route['egitim-listesi'] = "home/course_list";
 $route['egitim-detay/(:any)'] = "home/course_detail/$1";
 
 $route['referanslar'] = "home/reference_list";
+
+$route['markalar'] = "home/brand_list";

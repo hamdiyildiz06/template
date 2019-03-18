@@ -155,7 +155,7 @@
                                                 <a href="<?= base_url("egitim-listesi") ?>">Eğitimler</a>
                                             </li>
                                             <li>
-                                                <a href="portfolio-grid-2-3-col.html">Markalar</a>
+                                                <a href="<?= base_url("markalar") ?>">Markalar</a>
                                             </li>
                                             <li>
                                                 <a href="portfolio-grid-2-3-col.html">İletişim</a>
