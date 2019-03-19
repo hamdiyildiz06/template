@@ -1,3 +1,4 @@
+<?php $settings = get_settings(); ?>
 <!-- header-container start -->
 <div class="header-container">
 
@@ -84,7 +85,7 @@
 
                         <!-- name-and-slogan -->
                         <div class="site-slogan">
-                            Multipurpose HTML5 Template
+                            <?= $settings->slogan; ?>
                         </div>
 
                     </div>
@@ -132,7 +133,7 @@
                                             <li class="dropdown ">
                                                 <a  class="dropdown-toggle" data-toggle="dropdown" href="#">Hakkımızda</a>
                                                 <ul class="dropdown-menu">
-                                                    <li ><a href="portfolio-list-1.html">Hakkımızda</a></li>
+                                                    <li ><a href="<?= base_url("hakkimizda"); ?>">Hakkımızda</a></li>
                                                     <li ><a href="<?= base_url("portfolyo-listesi") ?>">Portfolyo</a></li>
                                                     <li ><a href="portfolio-list-sidebar.html">Haberler</a></li>
                                                     <li ><a href="<?= base_url("referanslar") ?>">Referanslar</a></li>
