@@ -230,7 +230,15 @@ class Home extends CI_Controller {
         $this->load->view($viewData->viewFolder, $viewData);
     }
 
+    public function contact(){
+        $viewData = new stdClass();
+        $viewData->viewFolder = "contact_v";
 
+        //Verileri Yükleyelim
+        $this->load->model("settings_model");
+
+        $this->load->view($viewData->viewFolder, $viewData);
+    }
 
 
 

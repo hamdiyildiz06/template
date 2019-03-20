@@ -154,13 +154,13 @@
                                                 <a href="<?= base_url("urun-listesi"); ?>">Ürünler</a>
                                             </li>
                                             <li>
-                                                <a href="<?= base_url("egitim-listesi") ?>">Eğitimler</a>
+                                                <a href="<?= base_url("egitim-listesi"); ?>">Eğitimler</a>
                                             </li>
                                             <li>
-                                                <a href="<?= base_url("markalar") ?>">Markalar</a>
+                                                <a href="<?= base_url("markalar"); ?>">Markalar</a>
                                             </li>
                                             <li>
-                                                <a href="portfolio-grid-2-3-col.html">İletişim</a>
+                                                <a href="<?= base_url("iletisim"); ?>">İletişim</a>
                                             </li>
 
                                         </ul>

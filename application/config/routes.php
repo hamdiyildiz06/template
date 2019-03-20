@@ -70,3 +70,5 @@ $route['markalar'] = "home/brand_list";
 $route['hizmetlerimiz'] = "home/service_list";
 
 $route['hakkimizda'] = "home/about_us";
+
+$route['iletisim'] = "home/contact";
