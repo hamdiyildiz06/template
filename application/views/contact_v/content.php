@@ -42,40 +42,40 @@
             <!-- main start -->
             <!-- ================ -->
             <div class="main col-md-12 space-bottom">
-                <h2 class="title">Drop Us a Line</h2>
+                <h2 class="title">Bize Yazın</h2>
                 <div class="row">
                     <div class="col-md-6">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet quisquam.</p>
+                        <p>Bize Mesaj Göndermek İçin Aşağıdaki Formu Kullanabilirsiniz</p>
                         <div class="alert alert-success hidden" id="MessageSent">
-                            We have received your message, we will contact you very soon.
+                            Mesaj Başarılı bir şekilde bize iletildi
                         </div>
                         <div class="alert alert-danger hidden" id="MessageNotSent">
-                            Oops! Something went wrong, please verify that you are not a robot or refresh the page and try again.
+                            Mesaj gönderilirken bir problem oluştu lütfen tekrar deneyiniz
                         </div>
                         <div class="contact-form">
-                            <form id="contact-form-with-recaptcha" class="margin-clear" role="form">
+                            <form id="contact-form" class="margin-clear" role="form">
                                 <div class="form-group has-feedback">
-                                    <label for="name">Name*</label>
-                                    <input type="text" class="form-control" id="name" name="name" placeholder="">
+                                    <label for="name">Adınız*</label>
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Adınız">
                                     <i class="fa fa-user form-control-feedback"></i>
                                 </div>
                                 <div class="form-group has-feedback">
-                                    <label for="email">Email*</label>
-                                    <input type="email" class="form-control" id="email" name="email" placeholder="">
+                                    <label for="email">E-Posta*</label>
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="E-posta Adresiniz">
                                     <i class="fa fa-envelope form-control-feedback"></i>
                                 </div>
                                 <div class="form-group has-feedback">
-                                    <label for="subject">Subject*</label>
-                                    <input type="text" class="form-control" id="subject" name="subject" placeholder="">
+                                    <label for="subject">Konu*</label>
+                                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Konu">
                                     <i class="fa fa-navicon form-control-feedback"></i>
                                 </div>
                                 <div class="form-group has-feedback">
-                                    <label for="message">Message*</label>
-                                    <textarea class="form-control" rows="6" id="message" name="message" placeholder=""></textarea>
+                                    <label for="message">Mesajınız*</label>
+                                    <textarea class="form-control" rows="6" id="message" name="message" placeholder="Mesajınız"></textarea>
                                     <i class="fa fa-pencil form-control-feedback"></i>
                                 </div>
                                 <div class="g-recaptcha" data-sitekey="your_site_key"></div>
-                                <input type="submit" value="Submit" class="submit-button btn btn-default">
+                                <button type="submit" class="submit-button btn btn-default">Gönder</button>
                             </form>
                         </div>
                     </div>
@@ -99,16 +99,16 @@
                 <div class="call-to-action text-center">
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2">
-                            <h2 class="title">Subscribe to Our Newsletter</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus error pariatur deserunt laudantium nam, mollitia quas nihil inventore, quibusdam?</p>
+                            <h2 class="title">En Yeni HAberler İçin Abone Olun</h2>
+                            <p>Kampanyalarımızdan, fırdatlarımızdan ve etkinliklerimizden ilk önce haberdar sahibi olmak istiyorsanız bize abone olmayı unutmayın..</p>
                             <div class="separator"></div>
                             <form class="form-inline margin-clear">
                                 <div class="form-group has-feedback">
-                                    <label class="sr-only" for="subscribe2">Email address</label>
-                                    <input type="email" class="form-control" id="subscribe2" placeholder="Enter email" name="subscribe2" required="">
+                                    <label class="sr-only" for="subscribe2">E-posta Adresiniz</label>
+                                    <input type="email" class="form-control" id="subscribe2" placeholder="E-posta Adresiniz" name="subscribe_email" required="">
                                     <i class="fa fa-envelope form-control-feedback"></i>
                                 </div>
-                                <button type="submit" class="btn btn-gray-transparent btn-animated margin-clear">Submit <i class="fa fa-send"></i></button>
+                                <button type="submit" class="btn btn-gray-transparent btn-animated margin-clear">Abone Ol <i class="fa fa-send"></i></button>
                             </form>
                         </div>
                     </div>
