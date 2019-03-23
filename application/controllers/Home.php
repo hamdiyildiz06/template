@@ -240,7 +240,7 @@ class Home extends CI_Controller {
             "word"           => '',
             "img_path"       => 'captcha/',
             "img_url"        => base_url("captcha"),
-            "font_path"      => '',
+            "font_path"      => 'fonts/semiBold.ttft',
             "img_width"      => 150,
             "img_height"     => 50,
             "expiration"     => 7200,
@@ -248,7 +248,7 @@ class Home extends CI_Controller {
             "font_size"      => 20,
             "img_id"         => 'captcha_img',
             "pool"           => '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-            "color"          => array(
+            "colors"          => array(
                 'background' => array(56,255,45),
                 'border'     => array(255,255,255),
                 'text'       => array(0,0,0),
@@ -256,11 +256,40 @@ class Home extends CI_Controller {
             )
         );
 
-        $captcha = create_captcha($config);
-
-        print_r($captcha);
-
+        $viewData->captcha = create_captcha($config);
+        $this->session->set_flashdata("captcha", $viewData->captcha["word"]);
         $this->load->view($viewData->viewFolder, $viewData);
+    }
+
+    public function send_contact_message(){
+        $this->load->library("form_validation");
+
+        $this->form_validation->set_rules("name","Ad","trim|required");
+        $this->form_validation->set_rules("email","E-Posta","trim|required|valid_email");
+        $this->form_validation->set_rules("subject","Konu","trim|required");
+        $this->form_validation->set_rules("message","Mesaj","trim|required");
+        $this->form_validation->set_rules("captcha","Dogrulama Kodu","trim|required");
+
+        if ($this->form_validation->run() === FALSE){
+            echo "başarısız";
+
+//            redirect(base_url("iletisim"));
+        } else {
+            echo "başarılı tebrikler ";
+            if ($this->session->userdata("captcha") == $this->input->post("captcha")){
+                //TODO Alert Email Gönderme
+
+                echo "session başarılı";
+            } else {
+                //TODO Alert
+                echo "Olmadı dostum ne yapalım";
+//                redirect(base_url("iletisim"));
+            }
+
+
+        }
+
+
     }
 
 

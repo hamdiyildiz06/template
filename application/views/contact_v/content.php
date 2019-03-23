@@ -53,7 +53,7 @@
                             Mesaj gönderilirken bir problem oluştu lütfen tekrar deneyiniz
                         </div>
                         <div class="contact-form">
-                            <form id="contact-form" class="margin-clear" role="form">
+                            <form id="" class="margin-clear" role="form" action="<?= base_url("mesaj-gonder"); ?>" method="post">
                                 <div class="form-group has-feedback">
                                     <label for="name">Adınız*</label>
                                     <input type="text" class="form-control" id="name" name="name" placeholder="Adınız">
@@ -74,7 +74,19 @@
                                     <textarea class="form-control" rows="6" id="message" name="message" placeholder="Mesajınız"></textarea>
                                     <i class="fa fa-pencil form-control-feedback"></i>
                                 </div>
-                                <div class="g-recaptcha" data-sitekey="your_site_key"></div>
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <?= $captcha['image']; ?>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group has-feedback">
+                                            <input type="text" class="form-control" name="captcha" placeholder="Doğrulama Kodu">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <input type="hidden" name="<?= $this->security->get_csrf_token_name(); ?>" value="<?= $this->security->get_csrf_hash(); ?>">
                                 <button type="submit" class="submit-button btn btn-default">Gönder</button>
                             </form>
                         </div>

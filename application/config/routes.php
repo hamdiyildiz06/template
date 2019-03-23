@@ -72,3 +72,4 @@ $route['hizmetlerimiz'] = "home/service_list";
 $route['hakkimizda'] = "home/about_us";
 
 $route['iletisim'] = "home/contact";
+$route['mesaj-gonder'] = "home/send_contact_message";
