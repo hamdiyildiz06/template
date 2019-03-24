@@ -297,11 +297,39 @@ class Home extends CI_Controller {
                 echo "Olmadı dostum ne yapalım";
 //                redirect(base_url("iletisim"));
             }
-
-
         }
+    }
 
+    public function make_me_member(){
+        $this->load->library("form_validation");
 
+        $this->form_validation->set_rules("subscribe_email","E-posta Adresi","trim|required|valid_email");
+
+        if($this->form_validation->run() === false){
+            //TODO alert olacak
+            echo "bir hata oluştu bakalım mı ";
+        }else{
+            $this->load->model("member_model");
+
+            $insert = $this->member_model->add(
+                array(
+                    "email"      => $this->input->post("subscribe_email"),
+                    "ip_address" => $this->input->ip_address(),
+                    "isActive"  => 1,
+                    "createdAt"  => date("Y-m-d H:i:s")
+                )
+            );
+
+            if ($insert) {
+                //TODO Alert
+                echo "bir hata oluştu dostum ";
+            }else{
+                //TODO Alert
+                echo "işlem başarılı ";
+            }
+
+            redirect(base_url("iletisim"));
+        }
     }
 
 

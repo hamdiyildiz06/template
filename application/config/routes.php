@@ -73,3 +73,4 @@ $route['hakkimizda'] = "home/about_us";
 
 $route['iletisim'] = "home/contact";
 $route['mesaj-gonder'] = "home/send_contact_message";
+$route['abone-ol'] = "home/make_me_member";
