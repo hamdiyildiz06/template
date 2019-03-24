@@ -278,6 +278,18 @@ class Home extends CI_Controller {
             echo "başarılı tebrikler ";
             if ($this->session->userdata("captcha") == $this->input->post("captcha")){
                 //TODO Alert Email Gönderme
+                $name = $this->input->post("name");
+                $email = $this->input->post("email");
+                $subject = $this->input->post("subject");
+                $message = $this->input->post("message");
+
+                $email_message = "{$name} isimli ziyaretci Mesaj Bıraktı <br><strong>Mesaj  : </strong> {$message} <br><strong>Konu  : </strong> {$subject} <br> <strong>E-Posta : </strong> {$email}";
+
+                if (send_email("","Site İletişim Mesajı | {$subject}","$email_message")){
+                    echo "işlem başarılı";
+                } else {
+                    echo "işlem başarısız kusura bakma";
+                }
 
                 echo "session başarılı";
             } else {
