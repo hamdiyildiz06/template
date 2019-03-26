@@ -135,7 +135,7 @@
                                                 <ul class="dropdown-menu">
                                                     <li ><a href="<?= base_url("hakkimizda"); ?>">Hakkımızda</a></li>
                                                     <li ><a href="<?= base_url("portfolyo-listesi") ?>">Portfolyo</a></li>
-                                                    <li ><a href="portfolio-list-sidebar.html">Haberler</a></li>
+                                                    <li ><a href="<?= base_url("haberler"); ?>">Haberler</a></li>
                                                     <li ><a href="<?= base_url("referanslar") ?>">Referanslar</a></li>
                                                     <li ><a href="<?= base_url("hizmetlerimiz") ?>">Hizmetlerimiz</a></li>
                                                 </ul>

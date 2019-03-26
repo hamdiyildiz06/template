@@ -332,6 +332,23 @@ class Home extends CI_Controller {
         }
     }
 
+    public function news_list(){
+        $viewData = new stdClass();
+        $viewData->viewFolder = "news_list_v";
+
+        //Verileri Yükleyelim
+        $this->load->model("news_model");
+
+        //Verileri Çekelim
+        $viewData->news_list = $this->news_model->get_all(
+            array(
+                "isActive" => 1,
+            ),"rank ASC"
+        );
+
+        $this->load->view($viewData->viewFolder, $viewData);
+    }
+
 
 
 
