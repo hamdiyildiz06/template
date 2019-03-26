@@ -15,8 +15,13 @@ class News_model extends CI_Model{
     }
 
     /** Tüm kayıtları view'e getirecek olan metot.. */
-    public function get_all($where = array(), $order = "id ASC"){
-        return $this->db->where($where)->order_by($order)->get($this->tableName)->result();
+    public function get_all($where = array(), $order = "id ASC", $limit = array("count" => 0, "start" => 0)){
+        $this->db->where($where)->order_by($order);
+
+        if (!empty($limit))
+            $this->db->limit($limit["count"], $limit["start"]);
+
+        return $this->db->get($this->tableName)->result();
     }
 
     /** Tüm verileri veritabanına kayıy edecek olan metot.. */
