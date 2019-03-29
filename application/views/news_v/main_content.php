@@ -37,9 +37,15 @@
         <footer class="clearfix">
             <div class="link pull-right">
                 <ul class="social-links circle small colored clearfix margin-clear text-right animated-effect-1">
-                    <li class="twitter"><a target="_blank" href="http://www.twitter.com"><i class="fa fa-twitter"></i></a></li>
-                    <li class="googleplus"><a target="_blank" href="http://plus.google.com"><i class="fa fa-google-plus"></i></a></li>
-                    <li class="facebook"><a target="_blank" href="http://www.facebook.com"><i class="fa fa-facebook"></i></a></li>
+                    <li class="twitter">
+                        <a class="share-button" target="_blank" href="https://twitter.com/intent/tweet?text=<?= $news->title; ?> Haberi&url=<?= base_url("haberler-detay/{$news->url}"); ?>"><i class="fa fa-twitter"></i></a>
+                    </li>
+                    <li class="facebook">
+                        <a class="share-button" target="_blank" href="https://www.facebook.com/sharer.php?u=<?= base_url("haberler-detay/{$news->url}"); ?>&t=<?= $news->title; ?> Haberi"><i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li class="googleplus">
+                        <a class="share-button" target="_blank" href="https://plus.google.com/share?url=<?= base_url("haberler-detay/{$news->url}"); ?>"><i class="fa fa-google-plus"></i></a>
+                    </li>
                 </ul>
             </div>
         </footer>
