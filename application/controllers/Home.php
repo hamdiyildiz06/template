@@ -392,7 +392,9 @@ class Home extends CI_Controller {
                     )
                 );
 
+                $viewData->opengraph = 1;
                 $this->load->view($viewData->viewFolder, $viewData);
+
 
             }else{
                 //TODO Alert Eklenecek
